@@ -1,0 +1,28 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+import withMT from '@material-tailwind/html/utils/withMT';
+
+/** @type {import('tailwindcss').Config} */
+export default withMT({
+  content: [
+    './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+    './storage/framework/views/*.php',
+    './resources/**/*.blade.php',
+    './resources/**/*.js',
+    './resources/**/*.vue',
+    '../path/to/apexcharts/**/*.js', // Path to ApexCharts JS files
+    '../path/to/apexcharts-helper.js', // Path to helper JS file
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
+  flyonui: {
+    vendors: true, // Enable vendor-specific CSS generation for FlyonUI
+  }
+});
