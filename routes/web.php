@@ -34,6 +34,10 @@ Route::middleware('web')->group(function () {
 
 });
 
+Route::get('/', function () {
+    return redirect('/login');
+});
+
 Route::post('/logout', function () {
     Auth::logout();
     return redirect('/login');  // Redirect to login page after logout
